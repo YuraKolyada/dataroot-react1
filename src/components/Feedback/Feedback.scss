@@ -1,0 +1,91 @@
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+.root {
+  width: (1069px/1379px)*100%;
+  margin: 0 auto; 
+  min-width: 320px;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: 'Lora', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.text {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  font-size: 1.25rem;
+  font-family: 'Roboto';
+  line-height: 1.42;
+  color: #000000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    margin-bottom: 10px;
+    width: (497px/1069px)*100%;
+    min-width: 320px;
+  }
+}
+
+.name, .tel, .mail {
+  height: 57px;
+  border: 2px solid #3C3C43;
+  line-height: 53px;
+  color: #4F4F4F;
+  font-size: 20px;
+
+  &[placeholder] {
+    color: #4F4F4F;
+    font-size: 20px;
+    padding-left: 24px;
+  }
+}
+
+.quetions {
+  height: 121px;
+  color: #4F4F4F;
+  font-size: 20px;
+  border: 2px solid #3C3C43;
+
+
+  &[placeholder] {
+    padding-left: 24px;
+    line-height: 24px;
+    padding-top: 16px;
+    color: #4F4F4F;
+    font-size: 20px;
+  }
+}
+
+.submit {
+  text-align: center;
+  height: 51px;
+  background: #3C3C43;
+  color: #fff;
+  cursor: pointer;
+  line-height: 51px;
+  font-size: 20px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+.root {
+  background: #ffffff;
+
+}
+
+.container {
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo{
+      width:6rem;
+      margin-bottom: 2rem;
+    }
+    .mainTitle{
+      font-family: 'Lora', serif;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+
+}
+
+.brand {
+  text-decoration: none;
+  font-size: 1.75em; /* ~28px */
+}
+
+.brandTxt {
+  margin-left: 10px;
+}
+
+.banner {
+  text-align: center;
+}
+
+.bannerTitle {
+  margin: 0;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1em;
+}
+
+.btn{
+    font-family: "Roboto", sans-serif;
+    min-width: 264px;
+    background-color: #ffffff;
+    text-align: center;
+    height: 51px;
+    display: block;
+    line-height: 47px;
+    color: #3C3C43;
+    border: 2px solid #3C3C43;
+    font-size: 1.25rem;
+    margin-right: 50px;
+    &:hover{
+      background-color: #3C3C43;
+      color: #ffffff;
+      transition: ease-out 0.3s;
+    }
+}
+
+.wrap {
+  display: flex;
+  height: 109px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 41px 0 64px;
+}
+
+.title{
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 47px;
+}
+
+.contactsWrap {
+  display: flex;
+  align-items: center;
+}
+
+.contacts {
+  margin-right: 94px;
+  font-family: 'Roboto';
+  color: #4F4F4F;
+}
+
+.phone {
+  line-height: 29px;
+  font-size: 1.5rem;
+  padding-bottom: 7px;
+}
+
+.address {
+  line-height: 19px;
+  font-size: 1rem;
+}
+
+.langSwitch {
+  font-family: 'Roboto';
+  font-size: 1.125rem;
+  line-height: 22px;
+  color: #4F4F4F;
+  cursor: pointer;
+  .active {
+    color: #747880;
+  }
+}
+
+
+@media (max-width: 1000px) {
+    .wrap{
+      display: none;
+    }
+}
+

@@ -1,0 +1,77 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  .contact{
+    .about{
+
+      padding: 0 1.5rem;
+      .head{
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+        .logo{
+          width: 2rem;
+          margin-right: 1rem;
+        }
+        .info{
+          display: flex;
+          flex-direction: column;
+          .mainTitle{
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+          .phoneNumber{
+            font-family: 'Lora', serif;
+
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+
+      }
+      .nav{
+        margin-bottom: 3rem;
+
+
+        li{
+          .text{
+            width: 100%;
+            color: #3C3C43;
+            font-size: 1.125rem;
+            line-height: 34px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #3C3C43;
+            font-family: "Roboto", sans-serif;
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.75;
+            }
+          }
+        }
+      }
+      .nav > *{
+        width: 100%;
+      }
+    }
+  }
+}
+.listItems{
+  margin-bottom: 1rem;
+}
+
+.frame {
+   width: 622px;
+   height: 320px; 
+   border: 0;
+}
+
+@media (max-width: 1000px) {
+  .frame{
+    display: none;
+  }
+}

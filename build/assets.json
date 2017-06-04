@@ -1,0 +1,11 @@
+{
+  "polyfills": {
+    "js": "/assets/polyfills.chunk.js"
+  },
+  "client": {
+    "js": "/assets/client.js"
+  },
+  "vendor": {
+    "js": "/assets/vendor.js"
+  }
+}

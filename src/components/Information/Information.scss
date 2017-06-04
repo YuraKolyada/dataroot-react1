@@ -1,0 +1,106 @@
+.container{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 120px;
+    .leftBar{
+        display: flex;
+        flex-direction: column;
+        margin-right: 1rem;
+        justify-content: space-between;
+        .title{
+            background-color: #F9F0DD;
+            text-align: center;
+            margin-bottom: 1rem;
+            .advert{
+                padding: 6rem 4rem;
+                max-width: 40rem;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+        }
+        .downBar{
+            align-self: flex-end;
+            .btn{
+                font-family: "Roboto", sans-serif;
+                width: 80%;
+                min-width: 240px;
+                background-color: #ffffff;
+                text-align: center;
+                height: 53px;
+                display: block;
+                line-height: 49px;
+                color: #3C3C43;
+                border: 2px solid #3C3C43;
+                font-size: 1.125rem;
+            }
+            .btn:hover{
+                background-color: #3C3C43;
+                color: #ffffff;
+                transition: ease-out 0.3s;
+            }
+        }
+    }
+    .about{
+        border:0.1rem solid #4f4f4f;
+        padding: 0 1.5rem;
+        .head{
+            display: flex;
+            align-items: center;
+            margin: 3rem 0;
+            .logo{
+                width: 2rem;
+                margin-right: 1rem;
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                .mainTitle{
+                    font-family: 'Lora', serif;
+                    font-weight: bold;
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+                .phoneNumber{
+                    font-family: 'Lora', serif;
+
+                    font-size: 1.25rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+        }
+        .nav{
+            margin-bottom: 3rem;
+
+
+            li{
+                .text{
+                    width: 100%;
+                    color: #3C3C43;
+                    font-size: 1.125rem;
+                    cursor: pointer;
+                    line-height: 34px;
+                    padding-bottom: 3px;
+                    border-bottom: 2px solid #3C3C43;
+                    font-family: "Roboto", sans-serif;
+
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                }
+            }
+        }
+        .nav > *{
+            width: 100%;
+        }
+    }
+}
+.listItems{
+    margin-bottom: 1rem;
+}
+@media (max-width: 1000px) {
+    .about{
+        display: none;
+    }
+}
