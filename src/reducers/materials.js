@@ -15,32 +15,32 @@ const getInitialState = {
 				{key: 6, name: "онікс", type: 'onyx'},],
 
 	optionsMaterials: {
-		1: {
+		'marble': {
 			photos: [material1, material2, material3, material4, material5],
 			classNameId: 1,
 			type: 'marble'
 		},
-		2: {
+		'granite': {
 			photos: [material1, material4, material5, material3, material2],
 			classNameId: 2,
 			type: 'granite'
 		},
-		3: {
+		'sandstone': {
 			photos: [material2, material4, material5, material3, material1],
 			classNameId: 3,
 			type: 'sandstone'
 		},
-		4: {
+		'limestone': {
 			photos: [material1, material4, material5, material3, material2],
 			classNameId: 4,
 			type: 'limestone'
 		},
-		5: {
+		'kvatsyt': {
 			photos: [material1, material3, material5, material3, material4],
 			classNameId: 5,
 			type: 'kvatsyt'
 		},
-		6: {
+		'onyx': {
 			photos:[material4, material1, material5, material3, material2],
 			classNameId: 6,
 			type: 'onyx'

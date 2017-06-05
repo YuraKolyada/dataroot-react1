@@ -6,14 +6,9 @@ export default class Products extends React.Component {
     super();
   }
 
-  onClickBtn(key){
-    this.props.selectbtn(key);
+  onClickBtn(type){
+    this.props.selectbtn(type);
     history.push(`?type=${this.props.dataElem.type}`);
-  }
-
-  componentDidMount(){
-      console.log('xxx');
-      history.push(`?type=${this.props.selectedType}`);
   }
 
   render(){
@@ -23,7 +18,7 @@ export default class Products extends React.Component {
         <p 
         className={classNameId == key ? styles + " " + selected : styles} 
         key={key} 
-        onClick={this.onClickBtn.bind(this,key)}>
+        onClick={this.onClickBtn.bind(this,type)}>
         {name}</p>
       )
   }

@@ -47,6 +47,28 @@ class DescriptionProducts extends React.Component {
     super();
   }
 
+  componentDidMount(){
+      const count = '?type='.length,
+            selectURL = history.location.search.substr(count);
+
+      history.listen((location, action) => {
+        console.log(action);
+        if(action == 'POP'){
+          this.props.selectbtn(selectURL);
+
+        }
+      })
+
+      if (!history.location.search){ 
+        history.push(`?type=${this.props.selectedMaterial.type}`);
+      } else {
+        this.props.selectbtn(selectURL);
+      }
+
+     
+     
+  }
+
   render(){
     let {selectedMaterial, listMaterials, selectbtn } = this.props;
     return (
