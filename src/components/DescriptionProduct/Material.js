@@ -6,22 +6,23 @@ export default class Products extends React.Component {
     super();
   }
 
-  onClickBtn(key, e){
+  onClickBtn(key){
     this.props.selectbtn(key);
-    history.push(`?type=${this.props.type}`);
+    history.push(`?type=${this.props.dataElem.type}`);
   }
 
   componentDidMount(){
-      history.push(`?type=${this.props.type}`);
+      history.push(`?type=${this.props.selectedType}`);
   }
 
   render(){
-    let { type, selectbtn, name, keys, styles, selected, classNameId} = this.props;
+    let { selectbtn, styles, selected, classNameId, dataElem, selectedType} = this.props;
+    const { key, type, name} = dataElem;
     return (
         <p 
-        className={classNameId == keys ? styles + " " + selected : styles} 
-        key={keys} 
-        onClick={this.onClickBtn.bind(this,keys)}>
+        className={classNameId == key ? styles + " " + selected : styles} 
+        key={key} 
+        onClick={this.onClickBtn.bind(this,key)}>
         {name}</p>
       )
   }

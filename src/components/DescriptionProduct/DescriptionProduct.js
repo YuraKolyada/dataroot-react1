@@ -59,18 +59,18 @@ class DescriptionProducts extends React.Component {
              <div className={s.materials}>
               <span className={s.parametr}>Вид каменю:</span>
               {listMaterials.map((elem, index) => 
-                <Material keys={elem.key} 
+                <Material dataElem={elem} 
                 styles={s.material}
                 key={index}
                 selected={s.select}
-                type={selectedMaterial.type} 
-                name={elem.name}
+                selectedType={selectedMaterial.type}
                 classNameId={selectedMaterial.classNameId} 
                 selectbtn={selectbtn} />)}
             </div>
               <div className={s.photos}>
-                <img className={s.image} src={selectedMaterial.photos[0]} />
-              
+                { selectedMaterial.photos.map((photo, index) => 
+                  <img className={s.image} src={photo} alt="material" />
+                )}
               </div>
             </div> 
            </div>
@@ -83,7 +83,7 @@ class DescriptionProducts extends React.Component {
               <div className={s.photo_wrap} >
                 {elem.image.map((elemPhoto, indexPhoto) => {
                   return (
-                        <img className={s.image} 
+                        <img className={s.img} 
                         src={elemPhoto.photo} 
                         alt={elemPhoto.alt} 
                         key={indexPhoto}/>
