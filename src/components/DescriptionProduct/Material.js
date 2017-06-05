@@ -12,6 +12,7 @@ export default class Products extends React.Component {
   }
 
   componentDidMount(){
+      console.log('xxx');
       history.push(`?type=${this.props.selectedType}`);
   }
 

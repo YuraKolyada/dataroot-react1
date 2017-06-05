@@ -68,9 +68,15 @@ class DescriptionProducts extends React.Component {
                 selectbtn={selectbtn} />)}
             </div>
               <div className={s.photos}>
-                { selectedMaterial.photos.map((photo, index) => 
-                  <img className={s.image} src={photo} alt="material" />
-                )}
+                <img className={s.imageFirst} src={selectedMaterial.photos[0]} alt="material" />
+                <div className={s.photoOther}>
+                  { selectedMaterial.photos.map((photo, index) => {
+                    return ( (index >= 1)  ? 
+                      <img className={s.imageOther} key={index} src={photo} alt="material" />
+                      : null )
+                  }
+                  )}
+                </div>
               </div>
             </div> 
            </div>
