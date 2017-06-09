@@ -124,7 +124,7 @@
 
     }
 
-    img {
+    .products img {
     	width: 47%;
     	height: auto;
     }
@@ -154,11 +154,11 @@
     	display: flex;
     	flex-direction: column;
     	align-items: center;
-    }
 
-    img {
-    	width: 320px;
-    	height: auto;
+    	img {
+			width: 320px;
+			height: auto;
+		}
     }
 
     .parametr {

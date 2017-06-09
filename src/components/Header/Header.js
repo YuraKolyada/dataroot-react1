@@ -34,12 +34,6 @@ class Header extends React.Component {
     })
   }
 
-  componentDidUpdate(){
-    if(!this.state.isActiveMenu){
-      document.body.style.overflow = "hidden";
-    }
-  }
-  
   render() {
     return (
       <div className={s.root}>
