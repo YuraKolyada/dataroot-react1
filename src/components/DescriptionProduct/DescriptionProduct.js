@@ -14,6 +14,7 @@ import photo3 from "../../image/photo3.png";
 import history from '../../history';
 
 
+
 const list = [
   {
     name:'Складні архітектурні вироби',
@@ -48,25 +49,29 @@ class DescriptionProducts extends React.Component {
   }
 
   componentDidMount(){
-      const count = '?type='.length,
-            selectURL = history.location.search.substr(count);
-
-      history.listen((location, action) => {
-        console.log(action);
-        if(action == 'POP'){
-          this.props.selectbtn(selectURL);
-
-        }
-      })
-
-      if (!history.location.search){ 
-        history.push(`?type=${this.props.selectedMaterial.type}`);
-      } else {
+    const count = '?type='.length;
+    let selectURL;
+    
+    let getTypeForSelectUrl = () => {
+      selectURL = history.location.search.substr(count)
+      try {
         this.props.selectbtn(selectURL);
+      } catch(e){
+        console.log('error.not found page!');
       }
+    } 
 
-     
-     
+    history.listen((location, action) => {
+      if(action == 'POP'){
+        getTypeForSelectUrl();
+      }
+    })
+
+    if (!history.location.search){ 
+      history.push(`?type=${this.props.selectedMaterial.type}`);
+    } else {
+      getTypeForSelectUrl();
+    }
   }
 
   render(){

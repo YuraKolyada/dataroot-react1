@@ -10,6 +10,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import NotFound from './NotFound';
+import Header from '../../components/Header/Header';
 
 const title = 'Page Not Found';
 
@@ -20,7 +21,11 @@ export default {
   action() {
     return {
       title,
-      component: <Layout><NotFound title={title} /></Layout>,
+      component: 
+	      <Layout>
+		      	<Header active="true"/>
+		      	<NotFound title={title} />
+	      </Layout>,
       status: 404,
     };
   },

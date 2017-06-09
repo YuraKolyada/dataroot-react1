@@ -1,0 +1,16 @@
+.root {
+	height: 400px;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+
+.container > * {
+	color: red;
+	font-size: 40px;
+	font-family: 'Lora';
+	line-height: 1;
+}
