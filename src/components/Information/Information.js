@@ -2,11 +2,11 @@
  * Created by Vladyslav on 6/2/2017.
  */
 import React from 'react';
-
 import s from "./Information.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link/Link';
-import logo from './logo.png'
+
+const logo = 'http://savepic.ru/14399600.png';
 
 class Information extends React.Component {
     render() {
@@ -28,13 +28,13 @@ class Information extends React.Component {
                         <div className={s.head}>
                             <div className={s.logo}>
                                 <Link to={'/'} className={s.outer}>
-                                    <img className={s.logo} src={logo}/>
+                                    <img className={s.logo} src={logo} alt="logo"/>
                                 </Link>
 
                             </div>
                             <div className={s.info}>
                                 <h1 className={s.mainTitle}>Майстерня</h1>
-                                <Link to={'/'}> <p className={s.phoneNumber}>+38 066 445 59 00</p></Link>
+                                <a className={s.phoneNumber} href="tel:+380664455900">+38 066 445 59 00</a>
                                 <p className={s.address}>м. Мукачево, вул. Переяславська, 1</p>
                             </div>
                         </div>

@@ -72,12 +72,15 @@ class Products extends React.Component {
 						<div>
 							{navigation.productsType.map((elem, index) => 
 								<Link key={index}
-								className={elem.active ? `${s.item} ${s.select}` : s.item}
-								to={elem.link}>
-								{elem.name} </Link>)}
+									className={elem.active ? `${s.item} ${s.select}` : s.item}
+									to={elem.link}>
+									{elem.name} 
+								</Link>
+							)}
 						</div>
 						<Link to="/catalog" className={s.btn}>Каталог продукції</Link>
 					</div>
+
 					{navigation.type.map((elem, index) => (
 						<div key={index}>
 							<div className={s.imageWrap}>
@@ -86,7 +89,8 @@ class Products extends React.Component {
 							<div className={s.wrap}>
 								<Link to={elem.link} className={s.element}>{elem.name}</Link>
 							</div>
-						</div>))}
+						</div>)
+					)}
 				</div>
 			</div>
 			)

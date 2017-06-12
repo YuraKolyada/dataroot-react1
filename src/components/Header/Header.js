@@ -4,10 +4,10 @@ import s from './Header.scss';
 import Link from '../Link';
 import LanguageSwitcher from '../LanguageSwitcher';
 import Svg from 'svg-react';
-import logo from './logo.png';
 import MenuIsActive from './Menu/MenuIsActive';
 import MenuIsNotActive from './Menu/MenuIsNotActive';
 
+const logo = 'http://savepic.ru/14399600.png';
 
 class Header extends React.Component {
   constructor(){
@@ -35,24 +35,25 @@ class Header extends React.Component {
           }
         </div>
 
-        { !this.props.active ? 
+        { !this.props.activeBanner 
+          ? 
           (<div className={s.container}>
             <Link to={'/'} className={s.outer}>
                 <img  className={s.logo} src={logo}/>
                 <h1 className={s.mainTitle}>Майстерня</h1>
             </Link>
           </div>)
-        :
+          :
           (<div className={s.wrap}>
             <Link to='/' className={s.title}>Майстерня</Link>
             <div className={s.contactsWrap}>
               <div className={s.contacts}>
-                <p className={s.phone}>+38 066 445 59 00</p>
+                <a className={s.phone} href="tel:+380664455900">+38 066 445 59 00</a>
                 <p className={s.address}>Доставка по Україні</p>
               </div>
               <Link to="/catalog" className={s.btn}>Зв'язатись з нами</Link>
               <div className={s.langSwitch}>
-                <span className={s.active}>УКР / </span>
+                <span className={s.active}>УКР &#8260; </span>
                 <span>РУС</span>
               </div>
             </div>

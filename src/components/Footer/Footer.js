@@ -1,16 +1,8 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.scss';
 import Link from '../Link';
+
 class Footer extends React.Component {
   render() {
     return (
@@ -23,10 +15,9 @@ class Footer extends React.Component {
             <div className={s.contact}>
                 <div className={s.about}>
                     <div className={s.head}>
-
                         <div className={s.info}>
                             <h1 className={s.mainTitle}>Контакти</h1>
-                            <Link to={'/'}> <p className={s.phoneNumber}>+38 066 445 59 00</p></Link>
+                            <a className={s.phoneNumber} href="tel:+380664455900">+38 066 445 59 00</a>
                             <p className={s.address}>м. Мукачево, вул. Переяславська, 1</p>
                         </div>
                     </div>

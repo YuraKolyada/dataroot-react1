@@ -60,11 +60,13 @@ class Projects extends React.Component {
                     <h1 className={s.title}>Краще один раз подивитись</h1>
                     <p className={s.topic}>Фото проектів з нашого instagram.</p>
                     <div className={s.projects}>
+                    
                         {ProjectsData.map((elem, index) => {
                             return (
                                 <Project key={index} 
                                 data={elem} /> )})
                         }
+
                     </div>
                     <div className={s.btnWrap}>
                         <Link to='/catalog' className={s.btn}>Всі проекти </Link>

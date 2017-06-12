@@ -6,7 +6,8 @@ import React from 'react';
 import s from "./AboutUs.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link/Link';
-import aboutPic from './aboutPic.png'
+
+const aboutPic = 'http://www.imageup.ru/img124/2789778/aboutpic.png'; 
 
 class AboutUs extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class AboutUs extends React.Component {
             <div className={s.root}>
                 <div className={s.container}>
                     <div className={s.image}>
-                        <img className={s.aboutPic} src={aboutPic}/>
+                        <img className={s.aboutPic} src={aboutPic} alt="about"/>
                     </div>
                     <div className={s.topic}>
                         <h2 className={s.title}>Про нас</h2>

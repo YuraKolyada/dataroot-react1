@@ -1,10 +1,9 @@
 import React from 'react';
-import menu from '../menu.png';
 import Link from '../../Link';
 import s from '../Header.scss';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
-
+const menu = 'http://savepic.ru/14387315.png';
 
 function MenuIsNotActive(props) {
 	let {onBtnShowMenu} = props;

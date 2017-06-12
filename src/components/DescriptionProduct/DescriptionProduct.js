@@ -95,7 +95,6 @@ class DescriptionProducts extends React.Component {
                     styles={s.material}
                     key={index}
                     selected={s.select}
-                    selectedType={selectedMaterial.type}
                     classNameId={selectedMaterial.classNameId} />)}
               </div>
               { error ?

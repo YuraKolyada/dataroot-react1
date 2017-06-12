@@ -13,7 +13,7 @@ class Contact extends React.Component {
     render() {
         return (
         <div>
-   			<Header active="true" />
+   			<Header activeBanner={true} />
             <DescriptionProduct context={this.props.context} />
             <AboutUs />
             <Feedback />

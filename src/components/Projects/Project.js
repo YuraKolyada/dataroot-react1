@@ -9,7 +9,7 @@ function Project(props){
 	return (
 	<div className={s.project}>
 		<Link to={link}>
-			<img src={photo} alt={alt} className={s.image}/>
+			<img src={photo} alt={alt} className={s.image} />
 		</Link>
 		<Link to={link} className={s.name}>{name}</Link>
 	</div>

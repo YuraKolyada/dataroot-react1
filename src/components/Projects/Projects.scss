@@ -1,5 +1,4 @@
 .container{
-    margin: 0 auto;
     text-align: center;
     width: (1010px/1379px)*100%;
 	margin: 0 auto;
@@ -68,10 +67,30 @@
     color: #3C3C43;
     border: 2px solid #3C3C43;
     font-size: 1.25rem;
-    margin-right: 50px;
     &:hover{
       background-color: #3C3C43;
       color: #ffffff;
       transition: ease-out 0.3s;
     }
+}
+
+@media (max-width: 660px) {
+	.container {
+		width: 100%;
+		text-align: start;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& > * {
+			min-width: 320px;
+			width: 80%;
+
+		}
+	}
+
+	.projects {
+		flex-direction: column;
+		text-align: center;
+	}
 }

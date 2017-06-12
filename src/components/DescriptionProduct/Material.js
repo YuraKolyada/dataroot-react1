@@ -8,7 +8,7 @@ export default class Products extends React.Component {
   }
 
   render(){
-    let { styles, selected, classNameId, dataElem, selectedType} = this.props;
+    let { styles, selected, classNameId, dataElem } = this.props;
     const { key, type, name} = dataElem;
     return (
         <Link to={'?type=' + type}  

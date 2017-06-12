@@ -91,7 +91,7 @@
                 }
             }
         }
-        .nav > *{
+        .nav > * {
             width: 100%;
         }
     }
@@ -102,5 +102,21 @@
 @media (max-width: 1000px) {
     .about{
         display: none;
+    }
+
+    .leftBar {
+        margin-right: 0 !important;
+    }
+
+    .btn {
+        margin-right: 20px;
+    }
+
+    .advert {
+        padding: 6rem 2rem !important; 
+    }
+
+    .title {
+        text-align: start !important;
     }
 }

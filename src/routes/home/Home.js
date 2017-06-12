@@ -18,13 +18,13 @@ import Products from '../../components/catalogProduct/products';
 import Feedback from '../../components/Feedback/Feedback';
 import Header from '../../components/Header/Header';
 import Projects from '../../components/Projects/Projects';
-import Information from '../../components/Information';
+import Information from '../../components/Information/Information';
 import AboutUs from '../../components/AboutUs';
 class Home extends React.Component {
   render() {
     return (
       <div>
-          <Header active='' />
+          <Header activeBanner={false} />
           <Information />
           <Products />
           <AboutUs />

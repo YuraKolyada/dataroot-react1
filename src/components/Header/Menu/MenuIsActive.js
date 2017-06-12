@@ -1,13 +1,13 @@
 import React from 'react';
-import close from '../close.png';
-import logo from '../logo.png';
 import Link from '../../Link';
 import s from '../Header.scss';
 import ListMenu from './ListMenu';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 
-const numbers = ['Каталог продукції', 'Про нас', 'Наші роботи'];
+const numbers = ['Каталог продукції', 'Про нас', 'Наші роботи'],
+	close = 'http://savepic.ru/14398577.png',
+	logo = 'http://savepic.ru/14399600.png'; 
 
 function MenuIsActive(props) {
 	let {onBtnCloseMenu} = props;
@@ -27,7 +27,7 @@ function MenuIsActive(props) {
               </div>
               <div className={s.info}>
                   <h1 className={s.mainTitle}>Майстерня</h1>
-                  <Link to={'/'}> <p className={s.phoneNumber}>+38 066 445 59 00</p></Link>
+                  <a className={s.phoneNumber} href="tel:+380664455900">+38 066 445 59 00</a>
                   <p className={s.address}>м. Мукачево, вул. Переяславська, 1</p>
               </div>
           </div>
@@ -38,8 +38,6 @@ function MenuIsActive(props) {
             <Link to="/catalog" className={`${s.btn} ${s.btnMenu}`}>Зв'язатись з нами</Link>
           </div>
         </div>
-
-
 		)
 } 
 
