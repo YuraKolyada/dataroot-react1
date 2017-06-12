@@ -51,16 +51,20 @@ const getInitialState = {
 		photos: [material1, material2, material3, material4, material5],
 		classNameId: 1,
 		type: 'marble'
-	}
+	},
+
+	error: false
 }
 
 export default function selectMaterial(state=getInitialState, action){
 
 	switch(action.type){
 		case SELECT_MATERIAL:
+			if(!state.optionsMaterials[action.payload]) return {...state, error: true}; 
 			return {
 				...state,
 				selectedMaterial: state.optionsMaterials[action.payload],
+				error: false,
 			}
 	}
 	return state;

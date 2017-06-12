@@ -121,17 +121,19 @@
     .photo_wrap {
     	flex-wrap: wrap;
     	justify-content: center;
+		& img {
+			width: 47%;
+    		height: auto;
+		}
 
-    }
-
-    .products img {
-    	width: 47%;
-    	height: auto;
+		& > * {
+    		margin-bottom: 10px;
+    	}
     }
 }
 
 
-@media (max-width: 860px) {
+@media (max-width: 890px) {
     .item {
         flex-wrap: wrap;
         width: 640px;
@@ -172,9 +174,10 @@
     .photo_wrap {
     	flex-wrap: wrap;
     	justify-content: center;
-    	& > * {
-    		margin-bottom: 10px;
-    	}
+    }
+
+    .imageFirst {
+    	align-self: baseline;
     }
 
 }

@@ -1,25 +1,20 @@
 import React from 'react';
 import history from '../../history';
+import Link from '../Link/Link';
 
 export default class Products extends React.Component {
   constructor(){
     super();
   }
 
-  onClickBtn(type){
-    this.props.selectbtn(type);
-    history.push(`?type=${this.props.dataElem.type}`);
-  }
-
   render(){
-    let { selectbtn, styles, selected, classNameId, dataElem, selectedType} = this.props;
+    let { styles, selected, classNameId, dataElem, selectedType} = this.props;
     const { key, type, name} = dataElem;
     return (
-        <p 
+        <Link to={'?type=' + type}  
         className={classNameId == key ? styles + " " + selected : styles} 
-        key={key} 
-        onClick={this.onClickBtn.bind(this,type)}>
-        {name}</p>
+        key={key} >
+        {name}</Link>
       )
   }
 }

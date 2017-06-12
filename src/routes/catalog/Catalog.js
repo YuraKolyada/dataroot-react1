@@ -14,7 +14,7 @@ class Contact extends React.Component {
         return (
         <div>
    			<Header active="true" />
-            <DescriptionProduct />
+            <DescriptionProduct context={this.props.context} />
             <AboutUs />
             <Feedback />
         </div>

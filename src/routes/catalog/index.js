@@ -9,7 +9,7 @@
 
 import React from 'react';
 import Layout from '../../components/Layout';
-import Contact from './Catalog';
+import Catalog from './Catalog';
 
 const title = 'Catalog';
 
@@ -17,10 +17,10 @@ export default {
 
   path: '/catalog',
 
-  action() {
+  action(context) {
     return {
       title,
-      component: <Layout><Contact title={title} /></Layout>,
+      component: <Layout><Catalog title={title} context={context}/></Layout>,
     };
   },
 
