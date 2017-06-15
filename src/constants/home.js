@@ -1,0 +1,3 @@
+export const GET_ABOUT = 'GET_ABOUT';
+export const GET_PROJECTS = 'GET_PROJECTS';
+export const CALLBACK_REQUEST = 'CALLBACK_REQUEST';

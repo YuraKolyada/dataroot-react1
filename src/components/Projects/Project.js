@@ -4,14 +4,16 @@ import s from "./Projects.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 
-function Project(props){
-	const {name, photo, link, alt} = props.data;	
+function Project({ data }){
+	let {img, alt, tags} = data;	
+	tags = tags.map((tag) => `#${tag} `);
+	let tagsName = tags.join('');
 	return (
 	<div className={s.project}>
-		<Link to={link}>
-			<img src={photo} alt={alt} className={s.image} />
+		<Link to='/catalog'>
+			<img src={img} alt={alt} className={s.image} />
 		</Link>
-		<Link to={link} className={s.name}>{name}</Link>
+		<Link to='/catalog' className={s.name}> {tagsName} </Link>
 	</div>
 
 	)

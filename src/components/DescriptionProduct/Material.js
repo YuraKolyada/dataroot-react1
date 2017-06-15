@@ -8,11 +8,11 @@ export default class Products extends React.Component {
   }
 
   render(){
-    let { styles, selected, classNameId, dataElem } = this.props;
+    let { styles, selected, query, dataElem } = this.props;
     const { key, type, name} = dataElem;
     return (
         <Link to={'?type=' + type}  
-        className={classNameId == key ? styles + " " + selected : styles} 
+        className={type === query ? styles + " " + selected : styles} 
         key={key} >
         {name}</Link>
       )

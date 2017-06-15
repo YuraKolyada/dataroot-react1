@@ -66,6 +66,7 @@ class Html extends React.Component {
           {config.analytics.googleTrackingId &&
             <script src="https://www.google-analytics.com/analytics.js" async defer />
           }
+          <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyD9LOJPFKi35Cf9vZV4XvcsupAEr7iHekM" type="text/javascript"></script>
         </body>
       </html>
     );

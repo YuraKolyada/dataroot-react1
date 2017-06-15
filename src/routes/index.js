@@ -8,7 +8,8 @@
  */
 
 /* eslint-disable global-require */
-
+import { projects, about } from './../actions/HomeActions';
+import { park, architecture } from './../actions/CatalogActions';
 // The top-level (parent) route
 export default {
 
@@ -23,9 +24,15 @@ export default {
     require('./notFound').default,
   ],
 
-  async action({ next }) {
+  async action({ next, store }) {
     // Execute each child route until one of them return the result
     const route = await next();
+    await Promise.all([
+      store.dispatch(projects()), 
+      store.dispatch(about()),
+      store.dispatch(park()),
+      store.dispatch(architecture()),
+    ])
 
     // Provide default values for title, description etc.
     route.title = `${route.title || 'Untitled'}`;

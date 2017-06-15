@@ -2,32 +2,28 @@
  * Created by Vladyslav on 6/2/2017.
  */
 import React from 'react';
-
+import {connect} from 'react-redux';
 import s from "./AboutUs.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link/Link';
 
-const aboutPic = 'http://www.imageup.ru/img124/2789778/aboutpic.png'; 
 
 class AboutUs extends React.Component {
+
+
     render() {
+        let { title, content, img } = this.props.AboutData;
+        //let frag = new DOMParser().parseFromString(content);
+        //console.log(frag);
         return (
             <div className={s.root}>
                 <div className={s.container}>
                     <div className={s.image}>
-                        <img className={s.aboutPic} src={aboutPic} alt="about"/>
+                        <img className={s.aboutPic} src={img} alt="about"/>
                     </div>
                     <div className={s.topic}>
-                        <h2 className={s.title}>Про нас</h2>
-                        <div className={s.text}>
-                            <p className={s.article}>Майстерня – це місце, де ваша ідея реалізовується з натурального каменю.
-                                Вже більше 5 років ми створюємо унікальні дизайн-проекти для приватних і громадських інтер'єрів.
-                            </p>
-                            <p className={s.article}>
-                                Ми пропонуємо різні варіанти співпраці, серед яких створення дизайн-проектів будь-якої складності, їх авторський супровід та повна реалізація, художнє оформлення інтер'єрів, а також їх доставку та послуги монтування.
-                            </p>
-                            <p className={s.article}>Найважливіше для нас – ваше естетичне задоволення, тож ми гарантуємо якість нашої роботи та дотримання термінів виконання.</p>
-                        </div>
+                        <h2 className={s.title}>{title}</h2>
+                        <div className={s.text}>{content}</div>
                         <div className={s.btn}>
                             <NumberList className={s.list} numbers={numbers} />
                         </div>
@@ -51,5 +47,11 @@ function NumberList(props) {
 
 const numbers = ['Детальніше', 'Переглянути роботи'];
 
+function mapStateToProps(state) {
+    return {
+        AboutData: state.PageHomeData.about
+    }
+}
 
-export default withStyles(s)(AboutUs);
+export default withStyles(s)(connect(mapStateToProps)(AboutUs));
+

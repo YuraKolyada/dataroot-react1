@@ -3,57 +3,12 @@ import s from "./Projects.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link/Link';
 import Project from './Project';
-import project1 from '../../image/project1.png';
-import project3 from '../../image/project2.png';
-import project2 from '../../image/project3.png';
+import { connect } from 'react-redux';
 
-
-
-const ProjectsData = [
-        {    
-            name: "#onyx #m-selection",
-            photo: project1,
-            link: '/catalog',
-            alt: 'projects'
-        },
-        {
-            name: "#onyx #m-selection",
-            photo: project1,
-            link: '/catalog',
-            alt: 'projects'
-
-        },
-        {
-            name:'#onyx #m-selection',
-            photo: project3,
-            link: '/catalog',
-            alt: 'projects',
-        },
-        {
-            name: "#onyx #m-selection",
-            photo: project1,
-            link: '/catalog',
-            alt: 'projects'
-
-        },
-        {
-            name: "#onyx #m-selection",
-            photo: project2,
-            link: '/catalog',
-            alt: 'projects'
-
-        },
-        {
-            name: "#onyx #m-selection",
-            photo: project1,
-            link: '/catalog',
-            alt: 'projects'
-
-        }
-];
 
 class Projects extends React.Component {
     render() {
+        let { Projects } = this.props;
         return (
             <div className={s.root}>
                 <div className={s.container}>
@@ -61,7 +16,7 @@ class Projects extends React.Component {
                     <p className={s.topic}>Фото проектів з нашого instagram.</p>
                     <div className={s.projects}>
                     
-                        {ProjectsData.map((elem, index) => {
+                        {Projects.map((elem, index) => {
                             return (
                                 <Project key={index} 
                                 data={elem} /> )})
@@ -77,5 +32,10 @@ class Projects extends React.Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        Projects: state.PageHomeData.project
+    }
+}
 
-export default withStyles(s)(Projects);
+export default withStyles(s)(connect(mapStateToProps)(Projects));

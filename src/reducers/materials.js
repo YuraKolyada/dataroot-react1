@@ -1,9 +1,5 @@
-import {SELECT_MATERIAL} from '../constants/product';
-import material1 from "../image/material1.png";
-import material2 from "../image/material2.png";
-import material3 from "../image/material3.png";
-import material4 from "../image/material4.png";
-import material5 from "../image/material5.png";
+import {SELECT_MATERIAL, SELECT_START_LOAD, SELECT_MATERIAL_ERROR} from '../constants/product';
+
 
 
 const getInitialState = {
@@ -11,47 +7,10 @@ const getInitialState = {
 				{key: 2, name: "граніт", type: 'granite'},
 				{key: 3, name: "пісковик", type: 'sandstone'},
 				{key: 4, name: "вапняк", type: 'limestone'},
-				{key: 5, name: "квацит", type: 'kvatsyt'},
+				{key: 5, name: "квацит", type: 'quartzite'},
 				{key: 6, name: "онікс", type: 'onyx'},],
 
-	optionsMaterials: {
-		'marble': {
-			photos: [material1, material2, material3, material4, material5],
-			classNameId: 1,
-			type: 'marble'
-		},
-		'granite': {
-			photos: [material1, material4, material5, material3, material2],
-			classNameId: 2,
-			type: 'granite'
-		},
-		'sandstone': {
-			photos: [material2, material4, material5, material3, material1],
-			classNameId: 3,
-			type: 'sandstone'
-		},
-		'limestone': {
-			photos: [material1, material4, material5, material3, material2],
-			classNameId: 4,
-			type: 'limestone'
-		},
-		'kvatsyt': {
-			photos: [material1, material3, material5, material3, material4],
-			classNameId: 5,
-			type: 'kvatsyt'
-		},
-		'onyx': {
-			photos:[material4, material1, material5, material3, material2],
-			classNameId: 6,
-			type: 'onyx'
-		},
-	},
-
-	selectedMaterial: {
-		photos: [material1, material2, material3, material4, material5],
-		classNameId: 1,
-		type: 'marble'
-	},
+	selectedMaterial: [],
 
 	error: false
 }
@@ -59,11 +18,20 @@ const getInitialState = {
 export default function selectMaterial(state=getInitialState, action){
 
 	switch(action.type){
-		case SELECT_MATERIAL:
-			if(!state.optionsMaterials[action.payload]) return {...state, error: true}; 
+		case SELECT_START_LOAD: 
 			return {
 				...state,
-				selectedMaterial: state.optionsMaterials[action.payload],
+				error: true,
+			}
+		case SELECT_MATERIAL_ERROR:
+			return {
+				...state,
+				error: true,
+			}
+		case SELECT_MATERIAL:
+			return {
+				...state,
+				selectedMaterial: action.payload,
 				error: false,
 			}
 	}

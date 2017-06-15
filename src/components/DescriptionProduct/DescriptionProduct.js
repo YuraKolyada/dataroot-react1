@@ -72,7 +72,7 @@ class DescriptionProducts extends React.Component {
 
   componentWillReceiveProps(nextProps){
     let nextType = nextProps.context.query.type;
-    if(nextType){
+    if(nextType !== this.props.context.query.type){
       this.props.selectbtn(nextType)
     } else {
       return false;
@@ -80,7 +80,8 @@ class DescriptionProducts extends React.Component {
   }
 
   render(){
-    let { selectedMaterial, listMaterials, selectbtn, context, error } = this.props;
+    let { selectedMaterial, listMaterials, selectbtn, context, error, parkData, architectureData } = this.props;
+    console.log(parkData);
     return (
       <div className={s.products}>
         <h2 className={s.title}>Каталог продукції</h2>
@@ -95,32 +96,39 @@ class DescriptionProducts extends React.Component {
                     styles={s.material}
                     key={index}
                     selected={s.select}
-                    classNameId={selectedMaterial.classNameId} />)}
+                    query={context.query.type}/>)}
               </div>
               { error ?
-                <div className={s.error}>Not found page! type is not undefined</div>
+                <div className={s.error}>...loading</div>
                 :
-                <ListSelectPhotos list={selectedMaterial.photos} />
+                <ListSelectPhotos list={selectedMaterial} />
               } 
             </div>
           </div>
-
-        {list.map((elem, index) => {
-        return (
-          <div className={s.item} key={index}>
-            <p className={s.name}>{elem.name}</p>
+          <div className={s.item}>
+            <p className={s.name}>Складні архітектурні вироби</p>
             <div className={s.photo_wrap} >
-              {elem.image.map((elemPhoto, indexPhoto) => {
-                return (
-                  <img className={s.img} 
-                    src={elemPhoto.photo} 
-                    alt={elemPhoto.alt} 
-                    key={indexPhoto} />
-                )
-              })}
+             {architectureData.map((data, index) => 
+                <img className={s.img}
+                  key={index}
+                  src={data.img}
+                  alt={data.alt} 
+                />
+              )}
             </div>
-          </div>)
-        })}
+          </div>
+          <div className={s.item}>
+            <p className={s.name}>Садово-паркове мистецтво</p>
+            <div className={s.photo_wrap} >
+              {parkData.map((data, index) => 
+                <img className={s.img}
+                  key={index}
+                  src={data.img}
+                  alt={data.alt} 
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -132,6 +140,8 @@ function mapToStateProps(state){
     selectedMaterial: state.selectMaterial.selectedMaterial,
     listMaterials: state.selectMaterial.listMaterials,
     error: state.selectMaterial.error,
+    parkData: state.PageCatalogData.park,
+    architectureData: state.PageCatalogData.architecture
   }
 }
 
