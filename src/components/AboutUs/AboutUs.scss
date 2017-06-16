@@ -3,7 +3,7 @@
 .container {
     display: flex;
     justify-content: center;
-    margin: 4rem 0;
+    margin: 10rem 0 4rem;
     flex-wrap: wrap;
     .image{
         padding-right: 2rem;
@@ -19,6 +19,16 @@
 
         color: #4F4F4F;
     }
+
+    .bgTitle {
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.25;
+        margin: 130px 0 60px;
+
+        color: #4F4F4F;
+    }
+
     .text{
         display: flex;
         flex-direction: column;
@@ -63,10 +73,6 @@
         margin-right: 0;
     }
 
-    .image img {
-        width: 100% !important;
-    }
-
     .container {
         width: 100%;
         align-items: center;
@@ -76,4 +82,26 @@
             min-width: 320px;
         }
     }
+}
+
+@media (max-width: 1000px) {
+    .image img {
+        width: 100% !important;
+    }
+
+}
+
+
+@media (max-width: 860px) {
+    .container {
+        margin-top: 2.5rem;
+        .title {
+            margin: 1.25rem 0;
+        }
+
+        .bgTitle {
+            margin: 1.25rem 0;
+        }
+    }
+
 }

@@ -27,7 +27,7 @@ class Home extends React.Component {
           <Header activeBanner={false} />
           <Information />
           <Products />
-          <AboutUs />
+          <AboutUs bgPadding={true}/>
           <Projects />
           <Feedback />
       </div>

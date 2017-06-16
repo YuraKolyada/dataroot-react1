@@ -13,7 +13,7 @@ class Projects extends React.Component {
             <div className={s.root}>
                 <div className={s.container}>
                     <h1 className={s.title}>Краще один раз подивитись</h1>
-                    <p className={s.topic}>Фото проектів з нашого instagram.</p>
+                    <p className={s.topic}>Фото проектів з нашого <span className={s.social}>instagram.</span></p>
                     <div className={s.projects}>
                     
                         {Projects.map((elem, index) => {

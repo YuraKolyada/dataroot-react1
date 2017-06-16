@@ -15,7 +15,7 @@ class Contact extends React.Component {
         <div>
    			<Header activeBanner={true} />
             <DescriptionProduct context={this.props.context} />
-            <AboutUs />
+            <AboutUs bgPadding={false}/>
             <Feedback />
         </div>
       );

@@ -10,7 +10,10 @@ const getInitialState = {
 				{key: 5, name: "квацит", type: 'quartzite'},
 				{key: 6, name: "онікс", type: 'onyx'},],
 
-	selectedMaterial: [],
+	selectedMaterial: [{
+		img: '',
+		alt: ''
+	}],
 
 	error: false
 }

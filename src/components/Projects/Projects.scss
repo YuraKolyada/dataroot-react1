@@ -1,6 +1,6 @@
 .container{
     text-align: center;
-    width: (1010px/1379px)*100%;
+    width: (1021px/1379px)*100%;
 	margin: 0 auto;
 	margin-bottom: 140px; 
 
@@ -13,7 +13,8 @@
 	& > * {
 		flex-basis: 320px;
 		min-width: 320px;
-		margin-right: 20px; 
+		margin-right: 20px;
+
 	}
 }
 
@@ -54,6 +55,13 @@
 .btnWrap {
 	display: flex;
 	justify-content: center;
+}
+
+.social {
+	font-family: 'Roboto';
+	font-size: 1.25rem;
+	color: #000;
+	
 }
 
 .btn{

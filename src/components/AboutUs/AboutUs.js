@@ -22,7 +22,7 @@ class AboutUs extends React.Component {
                         <img className={s.aboutPic} src={img} alt="about"/>
                     </div>
                     <div className={s.topic}>
-                        <h2 className={s.title}>{title}</h2>
+                        <h2 className={ this.props.bgPadding ? s.bgTitle : s.title}>{title}</h2>
                         <div className={s.text}>
                         { text.map((str, index)=> 
                             <p className={s.str} key={index}>{str}</p>
