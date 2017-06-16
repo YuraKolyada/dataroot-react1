@@ -6,10 +6,17 @@ import {connect} from 'react-redux';
 import s from "./AboutUs.scss";
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link/Link';
-
+import PropTypes from 'prop-types';
 
 class AboutUs extends React.Component {
 
+    static propTypes = {
+        AboutData: React.PropTypes.shape({
+          title: React.PropTypes.string,
+          content: React.PropTypes.string,
+          img: React.PropTypes.string,
+        })
+      }
 
     render() {
         let { title, content, img } = this.props.AboutData;

@@ -22,7 +22,27 @@ class DescriptionProducts extends React.Component {
       key: React.PropTypes.number,
       name: React.PropTypes.string,
       type: React.PropTypes.string,
-    }))
+    })),
+
+    error: React.PropTypes.bool,
+
+    parkData: React.PropTypes.arrayOf(React.PropTypes.shape({
+      img: React.PropTypes.string,
+      alt: React.PropTypes.string,
+    })),
+
+    architectureData: React.PropTypes.arrayOf(React.PropTypes.shape({
+      img: React.PropTypes.string,
+      alt: React.PropTypes.string,
+    })),
+
+    selectbtn: React.PropTypes.func,
+
+    selectedMaterial:React.PropTypes.arrayOf(React.PropTypes.shape({
+      img: React.PropTypes.string,
+      alt: React.PropTypes.string,
+    })),
+
   }
 
   componentDidMount(){

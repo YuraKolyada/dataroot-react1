@@ -3,7 +3,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from '../DescriptionProduct.scss';
 
 function ListSelectPhotos({ list }){
-    console.log(list)
 	return (
 		list.length % 2 == 0 ?
             <div className={s.photos}>
