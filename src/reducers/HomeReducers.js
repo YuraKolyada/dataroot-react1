@@ -6,6 +6,7 @@ const getInitialState = {
 	project: [],
 	about: {},
 	textRequest: {},
+	fetching: false,
 }
 
 export default function PageHomeData(state = getInitialState, action){
@@ -14,17 +15,20 @@ export default function PageHomeData(state = getInitialState, action){
 		case GET_PROJECTS:
 			return {
 				...state,
-				project: action.payload
+				project: action.payload,
+				fetching: false,
 			}
 		case GET_ABOUT:
 			return {
 				...state,
-				about: action.payload
+				about: action.payload,
+				fetching: false,
 			}
 		case CALLBACK_REQUEST:
 			return {
 				...state,
-				textRequest: action.payload
+				textRequest: action.payload,
+				fetching: false,
 			}
 	}
 	return state;

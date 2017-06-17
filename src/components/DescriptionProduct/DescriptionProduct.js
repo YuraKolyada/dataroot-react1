@@ -1,11 +1,10 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './DescriptionProduct.scss';
 import { connect } from "react-redux"; 
 import { bindActionCreators } from 'redux';
-import {selectMaterial} from '../../actions/materialsActions';
+import {selectType} from '../../actions/CatalogActions';
 import Material from './Material';
 import ListSelectPhotos from './ListSelectPhotos/ListSelectPhotos';
 import history from '../../history';
@@ -13,18 +12,13 @@ import history from '../../history';
 
 
 class DescriptionProducts extends React.Component {
-  constructor(){
-    super();
-  }
-
+ 
   static propTypes = {
     listMaterials: React.PropTypes.arrayOf(React.PropTypes.shape({
       key: React.PropTypes.number,
       name: React.PropTypes.string,
       type: React.PropTypes.string,
     })),
-
-    error: React.PropTypes.bool,
 
     parkData: React.PropTypes.arrayOf(React.PropTypes.shape({
       img: React.PropTypes.string,
@@ -36,8 +30,6 @@ class DescriptionProducts extends React.Component {
       alt: React.PropTypes.string,
     })),
 
-    selectbtn: React.PropTypes.func,
-
     selectedMaterial:React.PropTypes.arrayOf(React.PropTypes.shape({
       img: React.PropTypes.string,
       alt: React.PropTypes.string,
@@ -46,29 +38,24 @@ class DescriptionProducts extends React.Component {
   }
 
   componentDidMount(){
-    const type = this.props.context.query.type,
-      startType = 'marble',
-      startUrl = `?type=${startType}`;
+    const type = this.props.context.query.type;
 
     if(type){
-      this.props.selectbtn(type);
-    } else {
-      history.push(startUrl);
-      this.props.selectbtn(startType);
+      this.props.onSelectType(type);
     }
   }
 
   componentWillReceiveProps(nextProps){
     let nextType = nextProps.context.query.type;
     if(nextType !== this.props.context.query.type){
-      this.props.selectbtn(nextType)
+      this.props.onSelectType(nextType)
     } else {
       return false;
     }
   }
 
   render(){
-    let { selectedMaterial, listMaterials, selectbtn, context, error, parkData, architectureData } = this.props;
+    let { selectedMaterial, listMaterials, onSelectType, context, fetching, parkData, architectureData } = this.props;
     return (
       <div className={s.products}>
         <h2 className={s.title}>Каталог продукції</h2>
@@ -85,7 +72,7 @@ class DescriptionProducts extends React.Component {
                     selected={s.select}
                     query={context.query.type}/>)}
               </div>
-              { error ?
+              { fetching ?
                 <div className={s.error}>...loading</div>
                 :
                 <ListSelectPhotos list={selectedMaterial} />
@@ -126,7 +113,7 @@ function mapToStateProps(state){
   return {
     selectedMaterial: state.selectMaterial.selectedMaterial,
     listMaterials: state.selectMaterial.listMaterials,
-    error: state.selectMaterial.error,
+    fetching: state.selectMaterial.fetching,
     parkData: state.PageCatalogData.park,
     architectureData: state.PageCatalogData.architecture
   }
@@ -134,7 +121,7 @@ function mapToStateProps(state){
 
 function mapToActionProps(dispatch){
   return {
-    selectbtn: bindActionCreators(selectMaterial,dispatch)
+    onSelectType: bindActionCreators(selectType,dispatch)
   }
 }
 

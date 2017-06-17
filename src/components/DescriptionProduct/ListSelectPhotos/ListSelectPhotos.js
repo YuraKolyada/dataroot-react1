@@ -7,23 +7,17 @@ function ListSelectPhotos({ list }){
 		list.length % 2 == 0 ?
             <div className={s.photos}>
                 { list.map((photo, index) => 
-                    <img src={photo.img} className={s.imageAll} key={index} alt={photo.alt} />
+                    <div style={{backgroundImage: `url(${photo.img})`}} className={s.imageAll} key={index} />
                 )}
             </div>
             :
             <div className={s.photos}>
-                <div className={s.imageFirst}>
-                    <img src={list[0].img} alt={list[0].alt} />
-                </div>
+                <div className={s.imageFirst} style={{backgroundImage: `url(${list[0].img})`}} />
                 <div className={s.photoOther}>
-                    { list.map((photo, index) => {
-                        return ( 
-                            index >= 1  ? 
-                                <img src={photo.img} className={s.imageOther} key={index} alt={photo.alt} />
-                            : 
-                            null
-                        )
-                    })}
+                    { list.map((photo, index) => (index >= 1)  
+                        ? <div style={{backgroundImage: `url(${photo.img})`}} className={s.imageOther} key={index} />
+                        : null
+                    )}
                 </div>
             </div>
 	);

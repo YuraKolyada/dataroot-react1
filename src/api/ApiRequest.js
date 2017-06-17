@@ -11,7 +11,7 @@ export default class Api {
 	}
 
 	options(object) {
-		if (!object && (typeof object === 'object')) return "";
+		if (!object && (typeof object !== 'object')) return "";
 
 		return '?' + encodeURIComponent(object.type) + '=' + encodeURIComponent(object.value);
 	}

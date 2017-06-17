@@ -9,7 +9,7 @@
 
 /* eslint-disable global-require */
 import { projects, about } from './../actions/HomeActions';
-import { park, architecture } from './../actions/CatalogActions';
+import { park, architecture, selectType } from './../actions/CatalogActions';
 // The top-level (parent) route
 export default {
 
@@ -32,6 +32,7 @@ export default {
       store.dispatch(about()),
       store.dispatch(park()),
       store.dispatch(architecture()),
+      store.dispatch(selectType()),
     ])
 
     // Provide default values for title, description etc.

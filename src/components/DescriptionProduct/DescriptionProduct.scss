@@ -74,17 +74,22 @@
 
 .imageFirst {
 	width: (280px/880px)*100%;
-	
-	img {
-		width: 100%;
-		height: 18.5vw;
-	}
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 250px;
+	background-position: center;
+    background-size: cover;
 }
 
 .imageOther {
 	width: calc(#{ '50% - 10px'});
 	margin-bottom: 20px;
-	max-height: 250px;
+	max-height: 300px;
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 250px;
+	background-position: center;
+    background-size: cover;
 
 	&:nth-child(3) {
 		margin-bottom: 0;
@@ -98,7 +103,11 @@
 .imageAll {
 	width: calc(#{ '33% - 10px'});
 	margin-bottom: 20px;
-	max-height: 250px;
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 250px;
+	background-position: center;
+    background-size: cover;
 }
 
 .photo_wrap {

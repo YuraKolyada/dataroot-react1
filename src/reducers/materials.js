@@ -1,4 +1,4 @@
-import {SELECT_MATERIAL, SELECT_START_LOAD, SELECT_MATERIAL_ERROR} from '../constants/product';
+import {SELECT_MATERIAL, START_LOADING} from '../constants/product';
 
 
 
@@ -9,33 +9,28 @@ const getInitialState = {
 				{key: 4, name: "вапняк", type: 'limestone'},
 				{key: 5, name: "квацит", type: 'quartzite'},
 				{key: 6, name: "онікс", type: 'onyx'},],
-
+	startType: 'marble',
 	selectedMaterial: [{
 		img: '',
 		alt: ''
 	}],
-
-	error: false
+	fetching: false,
 }
 
-export default function selectMaterial(state=getInitialState, action){
+export default function selectMaterial(state = getInitialState, action){
 
 	switch(action.type){
-		case SELECT_START_LOAD: 
+		case START_LOADING: 
 			return {
 				...state,
-				error: true,
-			}
-		case SELECT_MATERIAL_ERROR:
-			return {
-				...state,
-				error: true,
+				fetching: true,
 			}
 		case SELECT_MATERIAL:
 			return {
 				...state,
 				selectedMaterial: action.payload,
-				error: false,
+				fetching: false,
+				startType: '',
 			}
 	}
 	return state;
