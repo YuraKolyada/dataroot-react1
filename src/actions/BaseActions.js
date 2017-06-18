@@ -1,4 +1,4 @@
-import {START_LOADING} from '../constants/product';
+import { START_LOADING } from '../constants/product';
 import IndexApi from '../api/IndexApi';
 
 const Api = new IndexApi();
